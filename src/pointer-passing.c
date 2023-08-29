@@ -2,11 +2,11 @@
 
 int * gpi = 0;
 
-void f(int *pi) {
+void f1(int *pi) {
     gpi = pi;
 }
 
-void g(int **ppi) {
+void g1(int **ppi) {
     gpi = *ppi;
 }
 
@@ -14,10 +14,10 @@ int main() {
     int i = 1;
     printf("i = %d", i);
     printf("*gpi = %d", *gpi);
-    f(&i);
+    f1(&i);
     printf("After f: *gpi = %d;\ti = %d", *gpi, i);
     int *pi = &i;
-    g(&pi);
+    g1(&pi);
     printf("After g: *gpi = %d;\ti = %d", *gpi, i);
 
     return 0;
